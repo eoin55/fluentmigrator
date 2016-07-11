@@ -16,10 +16,13 @@
         <language>en-US</language>
     </metadata>
     <files>
-        <file src="bin\Release\FluentMigrator.dll" target="lib\net35\FluentMigrator.dll" />
-        <file src="bin\Release\FluentMigrator.xml" target="lib\net35\FluentMigrator.xml" />
-        <file src="bin\Release\*.dll" target="tools\" />
-		<file src="bin\Release\*.exe" target="tools\" />
-		<file src="bin\Release\*.xml" target="tools\" />
+        <file src="src\FluentMigrator.Console\bin\Release\FluentMigrator.dll" target="lib" />
+        <file src="src\FluentMigrator.Console\bin\Release\FluentMigrator.pdb" target="lib" />
+        <file src="src\FluentMigrator.Console\bin\Release\FluentMigrator.xml" target="lib" />
+        <file src="src\FluentMigrator.Console\bin\Release\*.dll" target="tools" />
+        <file src="src\FluentMigrator.Console\bin\Release\*.exe" target="tools" />
+        <file src="src\FluentMigrator.Console\bin\Release\*.exe.config" target="tools" />
+        <file src="src\FluentMigrator.Console\bin\Release\*.pdb" target="tools" />
+        <file src="src\FluentMigrator.Console\bin\Release\*.xml" target="tools" />
     </files>
 </package>
