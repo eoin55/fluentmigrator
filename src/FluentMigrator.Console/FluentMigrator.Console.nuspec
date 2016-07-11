@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>HoneyBear.FluentMigrator</id>
+        <version>$version$</version>
+        <title>HoneyBear.FluentMigrator</title>
+        <authors>Josh Coffman,Tom Marien,Eoin O'Connor</authors>
+        <owners>Eoin O'Connor</owners>
+        <licenseUrl>https://github.com/eoin55/fluentmigrator/LICENSE.txt</licenseUrl>
+        <projectUrl>https://github.com/eoin55/fluentmigrator</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>FluentMigrator is a database migration framework for .NET written in C#. The basic idea is that you can create migrations which are simply classes that derive from the Migration base class and have a Migration attribute with a unique version number attached to them. Upon executing FluentMigrator, you tell it which version to migrate to and it will run all necessary migrations in order to bring your database up to that version.
+        In addition to forward migration support, FluentMigrator also supports different ways to execute the migrations along with selective migrations called profiles and executing arbitrary SQL.</description>
+        <summary>FluentMigrator is a database migration framework for .NET written in C#.</summary>
+        <releaseNotes>https://github.com/eoin55/fluentmigrator/releases</releaseNotes>
+        <language>en-US</language>
+    </metadata>
+    <files>
+        <file src="bin\Release\FluentMigrator.dll" target="lib\net35\FluentMigrator.dll" />
+        <file src="bin\Release\FluentMigrator.xml" target="lib\net35\FluentMigrator.xml" />
+        <file src="bin\Release\*.dll" target="tools\" />
+		<file src="bin\Release\*.exe" target="tools\" />
+		<file src="bin\Release\*.xml" target="tools\" />
+    </files>
+</package>
