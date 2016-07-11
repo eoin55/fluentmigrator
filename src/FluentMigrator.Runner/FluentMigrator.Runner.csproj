@@ -135,6 +135,10 @@
     <Compile Include="Announcers\TextWriterAnnouncer.cs" />
     <Compile Include="Announcers\TextWriterWithGoAnnouncer.cs" />
     <Compile Include="CompatabilityMode.cs" />
+    <Compile Include="Generators\Informix\InformixColumn.cs" />
+    <Compile Include="Generators\Informix\InformixGenerator.cs" />
+    <Compile Include="Generators\Informix\InformixQuoter.cs" />
+    <Compile Include="Generators\Informix\InformixTypeMap.cs" />
     <Compile Include="Generators\Postgres\PostgresDescriptionGenerator.cs" />
     <Compile Include="Generators\SqlServer\SqlServer2014Generator.cs" />
     <Compile Include="Generators\Hana\HanaColumn.cs" />
@@ -174,6 +178,9 @@
     <Compile Include="Processors\Hana\HanaProcessor.cs" />
     <Compile Include="Processors\Hana\HanaProcessorFactory.cs" />
     <Compile Include="Processors\Hana\HanaDbFactory.cs" />
+    <Compile Include="Processors\Informix\InformixDbFactory.cs" />
+    <Compile Include="Processors\Informix\InformixProcessor.cs" />
+    <Compile Include="Processors\Informix\InformixProcessorFactory.cs" />
     <Compile Include="Processors\Oracle\OracleManagedDbFactory.cs" />
     <Compile Include="Processors\Oracle\OracleManagedProcessorFactory.cs" />
     <Compile Include="Processors\Db2\Db2DbFactory.cs" />
