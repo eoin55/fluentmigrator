@@ -44,7 +44,7 @@ namespace FluentMigrator.Runner.Generators.Informix
                 return acc;
             });
 
-            return $"ALTER COLUMN {Quoter.QuoteColumnName(column.Name)} SET DATA TYPE {alterClauses}";
+            return string.Format("ALTER COLUMN {0} SET DATA TYPE {1}", Quoter.QuoteColumnName(column.Name), alterClauses);
         }
 
         protected override string FormatDefaultValue(ColumnDefinition column)

@@ -16,11 +16,17 @@ namespace FluentMigrator.Runner.Processors.Informix
             Quoter = new InformixQuoter();
         }
 
-        public override string DatabaseType => "IBM Informix";
+        public override string DatabaseType
+        {
+            get { return "IBM Informix"; }
+        }
 
         public IQuoter Quoter { get; set; }
 
-        public override bool SupportsTransactions => true;
+        public override bool SupportsTransactions
+        {
+            get { return true; }
+        }
 
         public override bool ColumnExists(string schemaName, string tableName, string columnName)
         {
@@ -43,7 +49,7 @@ namespace FluentMigrator.Runner.Processors.Informix
         public override bool DefaultValueExists(string schemaName, string tableName, string columnName, object defaultValue)
         {
             var schema = string.IsNullOrEmpty(schemaName) ? string.Empty : "t.owner = '" + FormatToSafeName(schemaName) + "' AND ";
-            var defaultValueAsString = $"%{FormatHelper.FormatSqlEscape(defaultValue.ToString())}%";
+            var defaultValueAsString = string.Format("%{0}%", FormatHelper.FormatSqlEscape(defaultValue.ToString()));
 
             const string sql = "SELECT c.default FROM systables AS t INNER JOIN sysdefaults AS c ON t.tabid = c.tabid WHERE {0} t.tabname = '{1}' AND c.default = '{2}'";
             var exists = Exists(sql, schema, FormatToSafeName(tableName), columnName.ToUpper(), defaultValueAsString);
@@ -82,7 +88,7 @@ namespace FluentMigrator.Runner.Processors.Informix
 
             EnsureConnectionIsOpen();
 
-            expression.Operation?.Invoke(Connection, Transaction);
+            expression.Operation(Connection, Transaction);
         }
 
         public override DataSet Read(string template, params object[] args)
