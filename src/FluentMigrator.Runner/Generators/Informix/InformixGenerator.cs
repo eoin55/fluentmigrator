@@ -88,12 +88,12 @@ namespace FluentMigrator.Runner.Generators.Informix
             });
 
             return string.Format(
-                "ALTER TABLE {0} ADD CONSTRAINT {1} FOREIGN KEY ({2}) REFERENCES {3} ({4}){5}",
+                "ALTER TABLE {0} ADD CONSTRAINT FOREIGN KEY ({1}) REFERENCES {2} ({3}) CONSTRAINT {4} {5}",
                 QuoteSchemaAndTable(expression.ForeignKey.ForeignTableSchema, expression.ForeignKey.ForeignTable),
-                keyWithSchema,
                 foreignColumns,
                 QuoteSchemaAndTable(expression.ForeignKey.PrimaryTableSchema, expression.ForeignKey.PrimaryTable),
                 primaryColumns,
+                keyWithSchema,
                 FormatCascade("DELETE", expression.ForeignKey.OnDelete));
         }
 
