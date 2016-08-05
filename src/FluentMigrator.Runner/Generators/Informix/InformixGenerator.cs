@@ -108,11 +108,11 @@ namespace FluentMigrator.Runner.Generators.Informix
             var columnList = string.Join(", ", quotedNames.ToArray());
 
             return string.Format(
-                "ALTER TABLE {0} ADD CONSTRAINT {1} {2} ({3})",
+                "ALTER TABLE {0} ADD CONSTRAINT {1} ({2}) CONSTRAINT {3}",
                 QuoteSchemaAndTable(expression.Constraint.SchemaName, expression.Constraint.TableName),
-                constraintName,
                 constraintType,
-                columnList);
+                columnList,
+                constraintName);
         }
 
         public override string Generate(CreateIndexExpression expression)
