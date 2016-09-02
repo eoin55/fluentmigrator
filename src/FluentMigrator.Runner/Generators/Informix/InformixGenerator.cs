@@ -48,7 +48,7 @@ namespace FluentMigrator.Runner.Generators.Informix
 
             builder.AppendFormat("ALTER TABLE {0}", QuoteSchemaAndTable(expression.SchemaName, expression.TableName));
             foreach (var column in expression.ColumnNames)
-                builder.AppendFormat(" DROP COLUMN {0}", Quoter.QuoteColumnName(column));
+                builder.AppendFormat(" DROP {0}", Quoter.QuoteColumnName(column));
 
             return builder.ToString();
         }
